@@ -1,0 +1,117 @@
+<!-- COSC3324-202506 Albert Lopez-->
+
+
+<!--Framework with good integration for running and debugging tests, to be done in Mocha--> -->
+<!--Mocha is a flexible JavaScript test framework for Node.js and browers. -->
+<!--Another Framework to test with a Java Project is JUnit which is standard. -->
+<!--This file is being tested with Java Project Structure Maven"check [project-root] pom.xml -->
+<!--Can also be tested using [project-root] build.gradle -->
+
+<!-- run mvn clean test, mvn test -->
+<!-- run ./gradlew test -->
+
+
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_scroll"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- User Profile Section -->
+        <LinearLayout
+            android:id="@+id/user_profile_section"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="24dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <ImageView
+                android:id="@+id/profile_pic"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_profile_placeholder"
+                android:background="@drawable/circle_shape"
+                android:scaleType="centerCrop"/>
+
+            <TextView
+                android:id="@+id/username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Albert"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/user_bio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Lover of logic and clean code."
+                android:textColor="@android:color/darker_gray"
+                android:textSize="14sp"/>
+
+            <Button
+                android:id="@+id/edit_profile_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Edit Profile" />
+        </LinearLayout>
+
+        <!-- Matching System Section -->
+        <TextView
+            android:id="@+id/matching_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Your Matches"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/user_profile_section"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/match_recycler"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:paddingTop="8dp"
+            app:layout_constraintTop_toBottomOf="@id/matching_title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:orientation="horizontal" />
+
+        <!-- Event List Section -->
+        <TextView
+            android:id="@+id/events_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Upcoming Events"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginTop="24dp"
+            app:layout_constraintTop_toBottomOf="@id/match_recycler"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/event_list"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:paddingTop="8dp"
+            app:layout_constraintTop_toBottomOf="@id/events_title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
+<project-root>
+└── pom.xml
